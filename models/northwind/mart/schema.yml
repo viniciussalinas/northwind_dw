@@ -18,3 +18,12 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: dim_products
+      description: "Tabela dimensão"
+  
+    - name: dim_shippers
+      description: "Tabela dimensão"
+  
+    - name: dim_suppliers
+      description: "Tabela dimensão"

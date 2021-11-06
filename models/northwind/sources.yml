@@ -14,3 +14,7 @@ sources:
             tests:
                 - unique
                 - not_null
+        - name: public_products
+        - name: public_shippers
+        - name: public_suppliers
+        - name: public_order_details
