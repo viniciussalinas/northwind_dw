@@ -1,0 +1,20 @@
+version: 2
+
+models:
+    - name: fact_orders
+      description: "Tabela de fatos"
+      columns:
+          - name: order_id
+            description: "Chave primária original da tabela"
+            tests:
+                - unique
+                - not_null
+
+    - name: dim_customers
+      description: "Tabela dimensão"
+      columns:
+          - name: customer_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null

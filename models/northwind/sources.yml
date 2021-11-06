@@ -1,0 +1,16 @@
+# configuracao da fonte
+
+version: 2
+
+sources: 
+  - name: erp_northwind
+    tables:
+        - name: public_orders
+        - name: public_customers
+          description: Tabela de clientes
+          columns:
+          - name: customer_id
+            description: id do cliente
+            tests:
+                - unique
+                - not_null
