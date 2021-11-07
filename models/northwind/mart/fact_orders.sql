@@ -32,7 +32,10 @@ WITH
     order_detail AS (
         SELECT
             order_id,
-            product_id
+            product_id,
+            unit_price,
+            quantity,
+            discount
         FROM {{ ref('stg_order_details') }}
     ),
     orders_with_sk AS (
@@ -53,7 +56,10 @@ WITH
             orders.ship_city,
             orders.freight,
             orders.ship_address,
-            orders.required_date
+            orders.required_date,
+            order_detail.unit_price,
+            order_detail.quantity,
+            order_detail.discount
         FROM {{ ref('stg_orders') }} orders
         LEFT JOIN customer ON orders.customer_id = customer.customer_id
         LEFT JOIN shipper ON orders.shipper_id = shipper.shipper_id
